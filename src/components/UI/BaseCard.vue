@@ -15,4 +15,10 @@ section {
   max-width: 30rem;
   padding: 1.5rem;
 }
+@media (min-width: 800px) {
+  section {
+    padding: 2rem;
+    max-width: 26rem;
+  }
+}
 </style>

@@ -14,6 +14,11 @@
 import RatingForm from "./RatingForm.vue";
 export default {
   components: { RatingForm },
+  data() {
+    return {
+      rate: 0,
+    };
+  },
 };
 </script>
 
