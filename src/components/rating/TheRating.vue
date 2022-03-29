@@ -6,7 +6,7 @@
       Please let us know how we did with your support request. All feedback is
       appreciated to help us improve our offering!
     </p>
-    <rating-form></rating-form>
+    <rating-form @emit-rate="addRate"></rating-form>
   </base-card>
 </template>
 
@@ -14,10 +14,16 @@
 import RatingForm from "./RatingForm.vue";
 export default {
   components: { RatingForm },
+  emits: ["emit-rate"],
   data() {
     return {
       rate: 0,
     };
+  },
+  methods: {
+    addRate(rate) {
+      this.$emit("emit-rate", rate);
+    },
   },
 };
 </script>

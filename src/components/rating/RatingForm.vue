@@ -2,15 +2,35 @@
   <form @click.prevent="">
     <div class="form-control">
       <ul>
-        <li><button class="rate">1</button></li>
-        <li><button class="rate">2</button></li>
-        <li><button class="rate">3</button></li>
-        <li><button class="rate">4</button></li>
-        <li><button class="rate">5</button></li>
+        <li>
+          <button class="rate" value="1" type="button" @click="activeButton(1)">
+            1
+          </button>
+        </li>
+        <li>
+          <button class="rate" value="2" type="button" @click="activeButton(2)">
+            2
+          </button>
+        </li>
+        <li>
+          <button class="rate" value="3" type="button" @click="activeButton(3)">
+            3
+          </button>
+        </li>
+        <li>
+          <button class="rate" value="4" type="button" @click="activeButton(4)">
+            4
+          </button>
+        </li>
+        <li>
+          <button class="rate" value="5" type="button" @click="activeButton(5)">
+            5
+          </button>
+        </li>
       </ul>
     </div>
     <div class="form-control">
-      <base-button>Submit</base-button>
+      <base-button :disabled="rate === 0" @click="emitRate">Submit</base-button>
     </div>
   </form>
 </template>
@@ -19,6 +39,19 @@
 import BaseButton from "../UI/BaseButton.vue";
 export default {
   components: { BaseButton },
+  data() {
+    return {
+      rate: 0,
+    };
+  },
+  methods: {
+    activeButton(option) {
+      this.rate = option;
+    },
+    emitRate() {
+      this.$emit("emit-rate", this.rate);
+    },
+  },
 };
 </script>
 

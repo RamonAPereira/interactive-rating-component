@@ -1,12 +1,26 @@
 <template>
-  <the-rating></the-rating>
+  <the-rating v-if="rate === 0" @emit-rate="setRate"></the-rating>
+  <the-feedback v-else :rate="rate"></the-feedback>
 </template>
 
 <script>
 import TheRating from "./components/rating/TheRating.vue";
+import TheFeedback from "./components/feedback/TheFeedback.vue";
 export default {
+  emits: ["emit-rate"],
   components: {
     TheRating,
+    TheFeedback,
+  },
+  data() {
+    return {
+      rate: 0,
+    };
+  },
+  methods: {
+    setRate(rate) {
+      this.rate = rate;
+    },
   },
 };
 </script>

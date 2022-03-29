@@ -10,6 +10,7 @@ button {
   border-radius: 20px;
   border: none;
   color: hsl(0, 0%, 100%);
+  cursor: pointer;
   font-family: "Overpass", sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
@@ -22,6 +23,11 @@ button {
     background-color: hsl(0, 0%, 100%);
     color: hsl(25, 97%, 53%);
     transition: 0.2s all ease-in;
+  }
+
+  &:disabled {
+    background-color: hsl(213, 19%, 18%);
+    color: hsl(217, 12%, 63%);
   }
 }
 </style>
