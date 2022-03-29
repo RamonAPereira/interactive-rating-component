@@ -29,21 +29,34 @@ form {
   gap: 1.5rem;
 }
 ul {
-  list-style: none;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  list-style: none;
 }
 
 .rate {
-  background-color: hsl(213, 19%, 18%);
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 50%;
+  border: none;
   color: hsl(217, 12%, 63%);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  height: 50px;
+  justify-content: center;
+  width: 50px;
+
+  &:hover {
+    background-color: hsl(216, 12%, 54%);
+    color: hsl(0, 0%, 100%);
+    transition: 0.2s all ease-in;
+  }
+  &:focus {
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+    transition: 0.1s all ease-in;
+  }
 }
 </style>

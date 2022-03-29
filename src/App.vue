@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TheRating from "./components/layout/TheRating.vue";
+import TheRating from "./components/rating/TheRating.vue";
 export default {
   components: {
     TheRating,
